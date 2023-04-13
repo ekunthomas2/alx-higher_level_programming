@@ -1,6 +1,16 @@
 #!/usr/bin/python3
-number_of_lines = __import__('1-number_of_lines').number_of_lines
+# 1-write_file.py
+# Ekun-Thomas F <ekun_tee@yahoo.com>
+"""Defines a file-writing function."""
 
-filename = "my_file_0.txt"
-nb_lines = number_of_lines(filename)
-print("{} has {:d} lines".format(filename, nb_lines))
+
+def write_file(filename="", text=""):
+    """Write a string to a UTF8 text file.
+    Args:
+        filename (str): The name of the file to write.
+        text (str): The text to write to the file.
+    Returns:
+        The number of characters written.
+    """
+    with open(filename, "w", encoding="utf-8") as f:
+        return f.write(text)
